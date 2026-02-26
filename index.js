@@ -132,6 +132,7 @@ function showScreen(screen) {
   } else if (screen === 'hurray') {
     document.getElementById('hurray-screen').style.display = 'flex';
     document.querySelector('.next-btn').style.display='none';
+    document.getElementById('header').style.display = 'none';
   }
 }
 
