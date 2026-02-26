@@ -1,4 +1,4 @@
-const emojis = { 
+const action = { 
 
         rock: `<svg width="80" height="59" viewBox="0 0 80 59" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
         <rect width="80" height="58.5075" fill="url(#pattern0_1486_18_rs)"/>
@@ -76,10 +76,9 @@ function play(userChoice) {
   saveScores();
   updateScoreDisplay();
 
-console.log(emojis[pcChoice]);
-  document.getElementById('user-action').innerHTML = emojis[userChoice];
+  document.getElementById('user-action').innerHTML = action[userChoice];
   
-  document.getElementById('pc-action').innerHTML   = emojis[pcChoice];
+  document.getElementById('pc-action').innerHTML   = action[pcChoice];
   document.getElementById('user-circle').style.borderColor = colors[userChoice];
   document.getElementById('pc-circle').style.borderColor   = colors[pcChoice];
   document.getElementById('result-text').textContent    = result;
@@ -127,8 +126,12 @@ function showScreen(screen) {
 
   if (screen === 'choose') {
     document.getElementById('choose-screen').style.display = 'flex';
+    document.getElementById('header').style.display = 'flex';
+
   } else if (screen === 'result') {
     document.getElementById('result-screen').style.display = 'flex';
+    document.getElementById('header').style.display = 'flex';
+
   } else if (screen === 'hurray') {
     document.getElementById('hurray-screen').style.display = 'flex';
     document.querySelector('.next-btn').style.display='none';
